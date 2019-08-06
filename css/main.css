@@ -1,7 +1,67 @@
-html {
-  box-sizing: border-box;
+/* 1. LAYOUT */
+
+/* Base Styles */
+body {
+  line-height: 1.6;
+  font-family: "Sonny Gothic", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+/* Navigation Bar */
+
+nav {
+  display: flex;
+  background-color: #f8f5ef;
 }
+
+nav a {
+  flex-shrink: 0;
+  color: #e94033;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a img {
+  height: 2rem;
+  padding: 10px 20px 0px;
+}
+
+nav a:hover {
+  color: #195d9f;
+}
+
+.emptyFlexbox {
+  flex-basis: 50%;
+}
+
+.menuOption {
+  padding: 12px 50px
+}
+
+@media screen and (max-width: 550px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .mobile {
+    display: none;
+  }
+}
+
+/* Media Query Templates (Place next to relevant style) */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
