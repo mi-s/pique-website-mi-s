@@ -1,6 +1,13 @@
-/* 1. LAYOUT */
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+  1. Base Styles
+  2. Navigation Bar
+  3. Main Content
+     a. Hero
+  4. Footer
+*/
 
-/* Base Styles */
+/* 1. Base Styles */
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
@@ -16,7 +23,8 @@ body {
   display: flex;
 }
 
-/* Navigation Bar */
+/* --------------------------------------------------------------------- */
+/* 2. Navigation Bar */
 
 nav {
   overflow: hidden;
@@ -39,6 +47,7 @@ nav {
 
 #menuOptions a {
   padding-right: 7rem;
+  letter-spacing: 1px;
   color: #e94033;
   font-weight: 700;
   text-decoration: none;
@@ -70,11 +79,14 @@ nav {
   min-width: 160px;
   box-shadow: 0 .3rem .5rem -.2rem rgba(0,0,0,0.75);
   background-color: #f8f5ef;
+  z-index: 1;
 }
 
 #dropdownContent a {
   display: block;
   padding: 1.2rem 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: #195d9f;
   text-decoration: none;
   border: 1px solid #195d9f;
@@ -89,11 +101,55 @@ nav {
 .hide {display: none !important;}
 
 /* --------------------------------------------------------------------- */
-/* 2. MEDIA QUERIES */
+/* 3. Main Content */
+
+/* a. Hero Content */
+
+#hero {
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 5.2rem);
+  background-image: url('../images/pique-masthead.png');
+}
+
+#heroIntro {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 6%;
+  height: 60%;
+  width: 40%;
+  min-height: 36rem;
+  min-width: 64rem;
+  border-radius: 50%;
+  background-color: #f8f5ef;
+}
+
+@media (max-width: 550px) {
+  #heroIntro {
+    min-height: 50%;
+    min-width: 90%;
+  }
+}
+
+#heroIntro img {
+  padding: 10%;
+  max-width: 70%;
+}
+/* --------------------------------------------------------------------- */
+/* 4. Footer */
+
+
+/* --------------------------------------------------------------------- */
+/* 5. MEDIA QUERIES */
+
 @media (max-width: 550px) {
   .desktop {
     display: none !important;
   }
+  
+  
+  
 }
 
 @media (min-width: 550px) {
@@ -101,6 +157,7 @@ nav {
     display: none !important;
   }
 }
+
 
 /* Media Query Templates (Place next to relevant style) */
 

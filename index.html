@@ -44,19 +44,15 @@
     </div>
   </nav>
   
-  
+  <main>
+    <div id="hero" class="flexContainer">
+      <div id="heroIntro" class="flexContainer">
+        <img src="images/pique-logo.png" title="Pique">
+        <p>Ay lmao whats poppin</p>
+      </div>
+    </div>
+  </main>
 </body>
-<script>
-window.addEventListener("click", function(event) {
-  if (event.target.matches("#openDropdown")) {
-    document.getElementById("dropdownContent").classList.add("show");
-    document.getElementById("closeDropdown").classList.add("show");
-    document.getElementById("openDropdown").classList.add("hide");
-  } else {
-    document.getElementById("dropdownContent").classList.remove("show");
-    document.getElementById("closeDropdown").classList.remove("show");
-    document.getElementById("openDropdown").classList.remove("hide");
-  }
-});
-</script>
+  
+<script type="text/javascript" src="js/main.js"></script>
 </html>
