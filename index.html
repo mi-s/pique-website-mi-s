@@ -19,22 +19,44 @@
 </head>
   
 <body>
-  <nav>
-    <a href="https://getpique.app" title="Pique">
-      <img src="images/pique-logo.png" class="desktop" />
-      <img src="images/pique-logo-square.png" class="mobile" />
-    </a>
-    <div class="emptyFlexbox"></div>
-    <a href="https://getpique.app" title="Example Pique1" class="menuOption desktop">
-      Example 1
-    </a>
-    <a href="https://getpique.app" title="Example Pique2" class="menuOption desktop">
-      Example 2
-    </a>
-    <a href="https://getpique.app" title="Example Pique3" class="menuOption desktop">
-      Example 3
-    </a>
+  <nav class="flexContainer">
+    <div id="logo">
+      <a href="https://getpique.app" title="Pique">
+        <img src="images/pique-logo.png" class="desktop" />
+        <img src="images/pique-logo-square.png" class="mobile" />
+      </a>
+    </div>
+    <div id="bigEmptyFlexbox"></div>
+    <div id = "menuOptions" class="desktop">
+      <a href="https://getpique.app">Example 1</a>
+      <a href="https://getpique.app">Example 2</a>
+      <a href="https://getpique.app">Example 3</a>
+    </div>
+    <div id="smallEmptyFlexbox"></div>
+    <div id="dropdownMenu" class="mobile">
+      <img src="images/menu-button-open.png" id="openDropdown">
+      <img src="images/menu-button-close.png" id="closeDropdown">
+      <div id="dropdownContent">
+        <a href="https://getpique.app">Example 1</a>
+        <a href="https://getpique.app">Example 2</a>
+        <a href="https://getpique.app">Example 3</a>
+      </div>
+    </div>
   </nav>
-</body>
   
+  
+</body>
+<script>
+window.addEventListener("click", function(event) {
+  if (event.target.matches("#openDropdown")) {
+    document.getElementById("dropdownContent").classList.add("show");
+    document.getElementById("closeDropdown").classList.add("show");
+    document.getElementById("openDropdown").classList.add("hide");
+  } else {
+    document.getElementById("dropdownContent").classList.remove("show");
+    document.getElementById("closeDropdown").classList.remove("show");
+    document.getElementById("openDropdown").classList.remove("hide");
+  }
+});
+</script>
 </html>
