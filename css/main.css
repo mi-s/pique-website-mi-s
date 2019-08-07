@@ -13,6 +13,7 @@ body {
 /* Navigation Bar */
 
 nav {
+  overflow: hidden;
   background-color: #f8f5ef;
 }
 
@@ -52,32 +53,19 @@ nav {
 }
 
 #dropdownMenu {
-  position: relative;
-  display: inline-block;
-  height: 51px;
-  margin: 0 5px -5px 0;
+  height: 49px;
 }
 
-button {
-  position: relative;
-  margin: 5px;
+#dropdownMenu img {
   height: 41px;
-  width: 41px;
-  border-radius: 50%;
+  padding: 5px 5px 0 0;
 }
 
-button img {
-  position: relative;
-  height: 41px;
-  right: 8px;
-  bottom: 3px;
+#closeDropdown { /* Use JavaScript to display this */
+  display: none; 
 }
 
-#closeDropdown {
-  display: none;
-}
-
-#dropdownContent {
+#dropdownContent { /* Use JavaScript to display this */
   display: none;
   right: 0;
   position: absolute;
@@ -94,11 +82,14 @@ button img {
   display: block;
 }
 
-.show {display: block !important;}
+#dropdownContent a:hover {background-color: #ddd}
+
+/* JavaScript classes for Navigation Menu(Mobile) */
+.show {display: block !important;} 
 .hide {display: none !important;}
 
-.dropdownContent a:hover {background-color: #ddd}
-
+/* --------------------------------------------------------------------- */
+/* 2. MEDIA QUERIES */
 @media (max-width: 550px) {
   .desktop {
     display: none !important;
