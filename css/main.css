@@ -7,47 +7,68 @@
   4. Footer
 */
 
+/* ------------------------------------------------------- */
 /* 1. Base Styles */
 
 html {
+  box-sizing: border-box;
+  overflow-x:hidden;
   font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 body {
   line-height: 1.6;
   font-size: 1.6rem;
-  font-family: "Sonny Gothic", "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* Flex Classes */
 .flexContainer {
   display: flex;
 }
 
-/* --------------------------------------------------------------------- */
+.mainContent {
+  flex-basis: 123rem;
+  max-width: 123rem;
+  align-items: center;
+}
+
+/* ------------------------------------------------------- */
 /* 2. Navigation Bar */
 
 nav {
-  overflow: hidden;
-  padding: 1.4rem .5rem 1rem 2rem;
+  justify-content: center;
   background-color: #f8f5ef;
 }
 
-/* Only the space between these elements will flex */
-#logo, #menuOptions, #dropdownMenu {
-  flex-shrink: 0;
+#navContent{
+  padding: 1.8rem 0 1rem 3rem;
+}
+
+#logo {
+  margin-right: 5rem;
 }
 
 #logo a img {
-  height: 2rem;
+  width: 8rem;
 }
 
-#bigEmptyFlexbox {
-  flex-basis: 70%;
+@media (max-width: 550px) {
+  #logo a img {
+    width: 2.859rem;
+  }
+}
+
+#menuOptions {
+  padding-bottom: .7rem;
 }
 
 #menuOptions a {
-  padding-right: 7rem;
-  letter-spacing: 1px;
+  padding-left: 5rem;
+  letter-spacing: .05rem;
   color: #e94033;
   font-weight: 700;
   text-decoration: none;
@@ -57,14 +78,14 @@ nav {
   color: #195d9f;
 }
 
-#smallEmptyFlexbox {
-  flex-basis: 10%;
+#dropdownMenu {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
 }
 
 #dropdownMenu img {
-  position: absolute;
-  top: .5rem;
-  height: 4.1rem;
+  height: 4.358rem;
 }
 
 #closeDropdown { /* Use JavaScript to display this */
@@ -74,10 +95,10 @@ nav {
 #dropdownContent { /* Use JavaScript to display this */
   display: none;
   position: absolute;
-  top: 5.1rem;
+  top: 6.358rem;
   right: 0;
   min-width: 160px;
-  box-shadow: 0 .3rem .5rem -.2rem rgba(0,0,0,0.75);
+  box-shadow: 0 .3rem .5rem 0 rgba(0,0,0,0.75);
   background-color: #f8f5ef;
   z-index: 1;
 }
@@ -85,7 +106,7 @@ nav {
 #dropdownContent a {
   display: block;
   padding: 1.2rem 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   color: #195d9f;
   text-decoration: none;
@@ -100,7 +121,7 @@ nav {
 .show {display: block !important;} 
 .hide {display: none !important;}
 
-/* --------------------------------------------------------------------- */
+/* ------------------------------------------------------- */
 /* 3. Main Content */
 
 /* a. Hero Content */
@@ -136,20 +157,64 @@ nav {
   padding: 10%;
   max-width: 70%;
 }
-/* --------------------------------------------------------------------- */
+/* ------------------------------------------------------- */
 /* 4. Footer */
 
+footer {
+  justify-content: center;
+  background-color: #195d9f;
+  height: 5rem;
+}
 
-/* --------------------------------------------------------------------- */
+@media (max-width: 550px) {
+  footer {
+    height: 12.5rem;
+  }
+}
+
+#footerContent {
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+#footerContent * {
+  flex-shrink: 0;
+}
+
+#footerCopy {
+  justify-content: center;
+  align-content: center;
+}
+
+footer p, footer a {
+  margin: 0 5rem 0 0;
+  font-size: 1.2rem;
+  color: #eee6d7;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+#socialMedia a {
+  margin-right: 3rem;
+}
+
+#socialMedia a img {
+  margin-top: .5rem;
+  height: 2rem;
+}
+
+
+
+/* ------------------------------------------------------- */
 /* 5. MEDIA QUERIES */
 
 @media (max-width: 550px) {
   .desktop {
     display: none !important;
   }
-  
-  
-  
 }
 
 @media (min-width: 550px) {

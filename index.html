@@ -20,26 +20,26 @@
   
 <body>
   <nav class="flexContainer">
-    <div id="logo">
-      <a href="https://getpique.app" title="Pique">
-        <img src="images/pique-logo.png" class="desktop" />
-        <img src="images/pique-logo-square.png" class="mobile" />
-      </a>
-    </div>
-    <div id="bigEmptyFlexbox"></div>
-    <div id = "menuOptions" class="desktop">
-      <a href="https://getpique.app">Example 1</a>
-      <a href="https://getpique.app">Example 2</a>
-      <a href="https://getpique.app">Example 3</a>
-    </div>
-    <div id="smallEmptyFlexbox"></div>
-    <div id="dropdownMenu" class="mobile">
-      <img src="images/menu-button-open.png" id="openDropdown">
-      <img src="images/menu-button-close.png" id="closeDropdown">
-      <div id="dropdownContent">
+    <div id="navContent" class="flexContainer mainContent">
+      <div id="logo">
+        <a href="https://getpique.app" title="Pique">
+          <img src="images/pique-logo.png" class="desktop"/>
+          <img src="images/pique-logo-square.png" class="mobile"/>
+        </a>
+      </div>
+      <div id="menuOptions" class="desktop">
         <a href="https://getpique.app">Example 1</a>
         <a href="https://getpique.app">Example 2</a>
         <a href="https://getpique.app">Example 3</a>
+      </div>
+      <div id="dropdownMenu" class="mobile">
+        <img src="images/menu-button-open.png" id="openDropdown">
+        <img src="images/menu-button-close.png" id="closeDropdown">
+        <div id="dropdownContent">
+          <a href="https://getpique.app">Example 1</a>
+          <a href="https://getpique.app">Example 2</a>
+          <a href="https://getpique.app">Example 3</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -48,10 +48,25 @@
     <div id="hero" class="flexContainer">
       <div id="heroIntro" class="flexContainer">
         <img src="images/pique-logo.png" title="Pique">
-        <p>Ay lmao whats poppin</p>
+        <p>The app that changes the way you see yourself and the world</p>
       </div>
     </div>
   </main>
+  
+  <footer class="flexContainer">
+    <div id="footerContent" class="flexContainer mainContent">
+      <div id="footerCopy" class="flexContainer">
+        <p>&copy; 2019 Jamais Vu, Inc.</p>
+        <a href="legal/termsOfService.html">Terms of Service</a>
+        <a href="legal/privacyPolicy.html">Privacy Policy</a>
+      </div>
+      <div id="socialMedia">
+        <a href="https://www.facebook.com/getpiqueapp/"><img src="images/facebook-icon.png"></a>
+        <a href="https://www.twitter.com/getpiqueapp/"><img src="images/twitter-icon.svg"></a>
+        <a href="https://www.instagram.com/getpiqueapp/"><img src="images/instagram-icon.svg"></a>
+      </div>
+    </div>
+  </footer>
 </body>
   
 <script type="text/javascript" src="js/main.js"></script>
