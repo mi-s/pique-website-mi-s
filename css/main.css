@@ -12,7 +12,7 @@
 
 html {
   box-sizing: border-box;
-  overflow-x:hidden;
+  overflow-x: hidden;
   font-size: 62.5%; /* 1rem = 10px */
 }
 
@@ -22,6 +22,7 @@ html {
 
 body {
   line-height: 1.6;
+  font-family: SonnyGothicReg;
   font-size: 1.6rem;
 }
 
@@ -44,19 +45,24 @@ body {
 /* Flex Classes */
 .flexContainer {
   display: flex;
+  justify-content: center;
 }
 
-.mainContent {
-  flex-basis: 100vw;
+.flexContent {
+  display: flex;
+  flex: 1 0 100vw;
   max-width: 123rem;
   align-items: center;
+}
+
+.flexContent > * {
+  flex-shrink: 0;
 }
 
 /* ------------------------------------------------------- */
 /* 2. Navigation Bar */
 
 nav {
-  justify-content: center;
   background-color: #f8f5ef;
 }
 
@@ -84,7 +90,7 @@ nav {
 
 #menuOptions a {
   padding-left: 5rem;
-  letter-spacing: .05rem;
+  letter-spacing: .1rem;
   color: #e94033;
   font-weight: 700;
   text-decoration: none;
@@ -111,7 +117,7 @@ nav {
 #dropdownContent { /* Use JavaScript to display this */
   display: none;
   position: absolute;
-  top: 6.358rem;
+  top: 5.359rem;
   right: 0;
   min-width: 160px;
   box-shadow: 0 .3rem .5rem 0 rgba(0,0,0,0.75);
@@ -142,12 +148,10 @@ nav {
 
 /* a. Hero Content */
 
-#hero {
-  justify-content: center;
-  align-items: center;
+#landing {
   height: calc(100vh - 5.2rem);
   background-image: url(../images/pique-masthead.png);
-  opacity: .4;
+  opacity: .39;
   background-color: #eee6d7;
 }
 
@@ -155,9 +159,8 @@ nav {
 /* 4. Footer */
 
 footer {
-  justify-content: center;
-  background-color: #195d9f;
   height: 5rem;
+  background-color: #195d9f;
 }
 
 @media (max-width: 550px) {
@@ -168,48 +171,61 @@ footer {
 
 #footerContent {
   justify-content: space-between;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 @media (max-width: 550px) {
   #footerContent {
-    padding: 2rem;
+    padding: 1rem 2rem;
     flex-direction: column;
   }
 }
 
-#footerContent * {
+#footerCopy {
+  display: flex;
   flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
 }
 
-#footerCopy {
-  justify-content: center;
-  align-content: center;
+@media (max-width: 550px) {
+  #footerCopy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #footerCopy p, #legal {
+    margin-bottom: 1rem;
+  }
 }
 
 #footerCopy * {
   margin: 0 5rem 0 0;
-  color: #eee6d7;
+  color: #f8f5ef;
   font-size: 1.2rem;
-  text-decoration: none;
 }
 
 @media (max-width: 550px) {
   #footerCopy * {
     margin: 0 1.2rem 0 1.2rem;
+    font-size: 1rem;
   }
 }
 
+#socialMedia {
+  display: flex;
+  justify-content: center;
+}
+
 #socialMedia a img {
-  margin: .5rem 0 0 2rem;
+  margin: 1rem 0 0 2rem;
   height: 3rem;
 }
 
 @media (max-width: 550px) {
   #socialMedia a img {
     margin: .5rem 1rem 0 1rem;
-    height: 3rem;
   }
 }
 
