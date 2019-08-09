@@ -25,13 +25,29 @@ body {
   font-size: 1.6rem;
 }
 
+/* Fonts */
+@font-face {
+  font-family: SonnyGothicBold;
+  src: url(../typography/w-foundry-sonny-gothic-regular.otf)
+}
+
+@font-face {
+  font-family: SonnyGothicReg;
+  src: url(../typography/w-foundry-sonny-gothic-book.otf)
+}
+
+@font-face {
+  font-family: SonnyGothicLight;
+  src: url(../typography/w-foundry-sonny-gothic-light.otf)
+}
+
 /* Flex Classes */
 .flexContainer {
   display: flex;
 }
 
 .mainContent {
-  flex-basis: 123rem;
+  flex-basis: 100vw;
   max-width: 123rem;
   align-items: center;
 }
@@ -45,7 +61,7 @@ nav {
 }
 
 #navContent{
-  padding: 1.8rem 0 1rem 3rem;
+  padding: 1.3rem 0 .5rem 3rem;
 }
 
 #logo {
@@ -80,8 +96,8 @@ nav {
 
 #dropdownMenu {
   position: absolute;
-  top: 1rem;
-  right: 3rem;
+  top: .5rem;
+  right: 2rem;
 }
 
 #dropdownMenu img {
@@ -130,33 +146,11 @@ nav {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 5.2rem);
-  background-image: url('../images/pique-masthead.png');
+  background-image: url(../images/pique-masthead.png);
+  opacity: .4;
+  background-color: #eee6d7;
 }
 
-#heroIntro {
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  bottom: 6%;
-  height: 60%;
-  width: 40%;
-  min-height: 36rem;
-  min-width: 64rem;
-  border-radius: 50%;
-  background-color: #f8f5ef;
-}
-
-@media (max-width: 550px) {
-  #heroIntro {
-    min-height: 50%;
-    min-width: 90%;
-  }
-}
-
-#heroIntro img {
-  padding: 10%;
-  max-width: 70%;
-}
 /* ------------------------------------------------------- */
 /* 4. Footer */
 
@@ -178,6 +172,13 @@ footer {
   padding-right: 3rem;
 }
 
+@media (max-width: 550px) {
+  #footerContent {
+    padding: 2rem;
+    flex-direction: column;
+  }
+}
+
 #footerContent * {
   flex-shrink: 0;
 }
@@ -187,25 +188,30 @@ footer {
   align-content: center;
 }
 
-footer p, footer a {
+#footerCopy * {
   margin: 0 5rem 0 0;
-  font-size: 1.2rem;
   color: #eee6d7;
-}
-
-footer a {
+  font-size: 1.2rem;
   text-decoration: none;
 }
 
-#socialMedia a {
-  margin-right: 3rem;
+@media (max-width: 550px) {
+  #footerCopy * {
+    margin: 0 1.2rem 0 1.2rem;
+  }
 }
 
 #socialMedia a img {
-  margin-top: .5rem;
-  height: 2rem;
+  margin: .5rem 0 0 2rem;
+  height: 3rem;
 }
 
+@media (max-width: 550px) {
+  #socialMedia a img {
+    margin: .5rem 1rem 0 1rem;
+    height: 3rem;
+  }
+}
 
 
 /* ------------------------------------------------------- */
