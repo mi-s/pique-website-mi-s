@@ -10,13 +10,13 @@
 /* ------------------------------------------------------- */
 /* 1. Base Styles */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   overflow-x: hidden;
   font-size: 62.5%; /* 1rem = 10px */
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
 }
 
 body {
@@ -50,7 +50,7 @@ body {
 .flexContent {
   display: flex;
   flex: 1 0 100vw;
-  max-width: 123rem;
+  max-width: 120rem;
   align-items: center;
 }
 
@@ -66,24 +66,8 @@ nav {
 }
 
 #navContent{
-  padding: 1rem 0 .7rem 0;
-}
-
-@media (max-width: 550px) {
-  #navContent {
-    justify-content: space-between;
-    padding: 1rem 2rem 1rem 0;
-  }
-}
-
-#logo {
-  margin: .7rem 3rem 0 0rem;
-}
-
-@media (max-width: 1230px) {
-  #logo {
-    margin-left: 2rem;
-  }
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1rem;
 }
 
 #logo a img {
@@ -92,20 +76,33 @@ nav {
 
 @media (max-width: 550px) {
   #logo a img {
-    width: 2.859rem;
+    width: 3.8rem;
   }
 }
 
 #menuOptions a {
-  padding-left: 5rem;
-  letter-spacing: .05rem;
-  color: #e94033;
-  font-weight: 700;
-  text-decoration: none;
+  position: relative;
+  text-decoration: none;  
+  margin-left: 5rem;
+  letter-spacing: .1rem;
+  color: #195d9f;
 }
 
-#menuOptions a:hover {
-  color: #195d9f;
+#menuOptions a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  height: .2rem;
+  left: 50%;
+  position: absolute;
+  background: #195d9f;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+#menuOptions a:hover:after { 
+  width: 100%; 
+  left: 0; 
 }
 
 #dropdownMenu, #dropdownMenu img {
@@ -119,7 +116,7 @@ nav {
 #dropdownContent { /* Use JavaScript to display this */
   display: none;
   position: absolute;
-  top: 6.5rem;
+  top: 7rem;
   right: 0;
   min-width: 160px;
   box-shadow: 0 .3rem .5rem 0 rgba(0,0,0,0.75);
@@ -153,28 +150,73 @@ nav {
 #landing {
   overflow: hidden;
   height: calc(100vh - 5.2rem);
-  background-color: #eee6d7;
+  background: #eee6d7;  /* url("../images/pique-masthead-transparent.png") repeat 0 0;
+  -webkit-animation: slide 60s linear infinite; */
+}
+
+@-webkit-keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: -1220px 0; }
 }
 
 #landingContent {  
-  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  margin-top: 8rem;
+  padding: 8rem 2rem;
+}
+
+@media (max-width: 1140px) {
+  #landingContent {
+    padding: 4rem 2rem;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 550px) {
+  #landingContent {
+    padding: 2rem 2rem;
+    flex-direction: column;
+  }
 }
 
 #landingContent h1 {
-  margin: 0 0 2rem 0;
-  color: #195d9f;
-  font-size: 6rem;
+  margin: 0;
+  padding: 0 0 2rem 0;
+  color: #e94033;
+  font-size: 5rem;
   line-height: 1.3;
+}
+
+@media (max-width: 550px) {
+  #landingContent h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #landingContent h1 {
+    font-size: 3rem;
+  }
 }
 
 #landingContent p {
   margin: 0;
+  color: #195d9f;
   font-size: 2.5rem;
 }
 
-.marvel-device {}
+@media (max-width: 550px) {
+  #landingContent p {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #landingContent p {
+    font-size: 1.8rem;
+  }
+}
+
 
 
 /* ------------------------------------------------------- */
@@ -187,11 +229,12 @@ footer {
 
 @media (max-width: 550px) {
   footer {
-    height: 12.5rem;
+    height: 12rem;
   }
 }
 
 #footerContent {
+  padding: 0 2rem;
   justify-content: space-between;
 }
 
@@ -204,17 +247,12 @@ footer {
 
 #footerCopy {
   display: flex;
-  flex-shrink: 0;
-  justify-content: center;
   align-items: center;
 }
 
 @media (max-width: 550px) {
   #footerCopy {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
   
   #footerCopy p, #legal {
@@ -223,21 +261,16 @@ footer {
 }
 
 #footerCopy * {
-  margin: 0 5rem 0 0;
+  margin: 0 4rem 0 0;
   color: #f8f5ef;
   font-size: 1.2rem;
 }
 
 @media (max-width: 550px) {
   #footerCopy * {
-    margin: 0 1.2rem 0 1.2rem;
+    margin: 0 2rem 0 2rem;
     font-size: 1rem;
   }
-}
-
-#socialMedia {
-  display: flex;
-  justify-content: center;
 }
 
 #socialMedia a img {
@@ -247,10 +280,10 @@ footer {
 
 @media (max-width: 550px) {
   #socialMedia a img {
-    margin: .5rem 1rem 0 1rem;
+    margin: 1rem 1rem 0 1rem;
+    height: 3rem;
   }
 }
-
 
 /* ------------------------------------------------------- */
 /* 5. MEDIA QUERIES */
