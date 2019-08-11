@@ -11,7 +11,6 @@
 /* 1. Base Styles */
 
 html {
-  box-sizing: border-box;
   overflow-x: hidden;
   font-size: 62.5%; /* 1rem = 10px */
 }
@@ -42,7 +41,7 @@ body {
   src: url(../typography/w-foundry-sonny-gothic-light.otf)
 }
 
-/* Flex Classes */
+/* Flex Styles */
 .flexContainer {
   display: flex;
   justify-content: center;
@@ -63,19 +62,32 @@ body {
 /* 2. Navigation Bar */
 
 nav {
-  background-color: #f8f5ef;
+  background-color: #eee6d7;
 }
 
 #navContent{
-  padding: 1.3rem 0 .5rem 3rem;
+  padding: 1rem 0 .7rem 0;
+}
+
+@media (max-width: 550px) {
+  #navContent {
+    justify-content: space-between;
+    padding: 1rem 2rem 1rem 0;
+  }
 }
 
 #logo {
-  margin-right: 5rem;
+  margin: .7rem 3rem 0 0rem;
+}
+
+@media (max-width: 1230px) {
+  #logo {
+    margin-left: 2rem;
+  }
 }
 
 #logo a img {
-  width: 8rem;
+  width: 10rem;
 }
 
 @media (max-width: 550px) {
@@ -84,13 +96,9 @@ nav {
   }
 }
 
-#menuOptions {
-  padding-bottom: .7rem;
-}
-
 #menuOptions a {
   padding-left: 5rem;
-  letter-spacing: .1rem;
+  letter-spacing: .05rem;
   color: #e94033;
   font-weight: 700;
   text-decoration: none;
@@ -100,14 +108,8 @@ nav {
   color: #195d9f;
 }
 
-#dropdownMenu {
-  position: absolute;
-  top: .5rem;
-  right: 2rem;
-}
-
-#dropdownMenu img {
-  height: 4.358rem;
+#dropdownMenu, #dropdownMenu img {
+  height: 4.5rem;
 }
 
 #closeDropdown { /* Use JavaScript to display this */
@@ -117,7 +119,7 @@ nav {
 #dropdownContent { /* Use JavaScript to display this */
   display: none;
   position: absolute;
-  top: 5.359rem;
+  top: 6.5rem;
   right: 0;
   min-width: 160px;
   box-shadow: 0 .3rem .5rem 0 rgba(0,0,0,0.75);
@@ -149,11 +151,31 @@ nav {
 /* a. Hero Content */
 
 #landing {
+  overflow: hidden;
   height: calc(100vh - 5.2rem);
-  background-image: url(../images/pique-masthead.png);
-  opacity: .39;
   background-color: #eee6d7;
 }
+
+#landingContent {  
+  flex-direction: column;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+#landingContent h1 {
+  margin: 0 0 2rem 0;
+  color: #195d9f;
+  font-size: 6rem;
+  line-height: 1.3;
+}
+
+#landingContent p {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.marvel-device {}
+
 
 /* ------------------------------------------------------- */
 /* 4. Footer */
