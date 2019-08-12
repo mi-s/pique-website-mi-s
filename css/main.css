@@ -10,21 +10,21 @@
 /* ------------------------------------------------------- */
 /* 1. Base Styles */
 
-* {
-  box-sizing: border-box;
-}
+/* All boxes are sized as border-boxes */
+* { box-sizing: border-box; }
 
 html {
   overflow-x: hidden;
   font-size: 62.5%; /* 1rem = 10px */
 }
 
+/* Base font styles + animated background */
 body {
-  line-height: 1.6;
   font-family: SonnyGothicReg;
   font-size: 1.6rem;
+  line-height: 1.6;
   background: #eee6d7 url("../images/pique-masthead-wavy-small.png") repeat 0 0;
-  -webkit-animation: slide 30s linear infinite;
+  -webkit-animation: slide 20s linear infinite;
 }
 
 @-webkit-keyframes slide {
@@ -33,7 +33,7 @@ body {
 }
 
 /* Fonts */
-@font-face {
+@font-face {`
   font-family: CallunaBold;
   src: url(../typography/calluna-bold.otf)
 }
@@ -66,34 +66,28 @@ body {
   align-items: center;
 }
 
-.flexContent > * {
-  flex-shrink: 0;
-}
+.flexContent > * { flex-shrink: 0; }
 
 /* ------------------------------------------------------- */
 /* 2. Navigation Bar */
 
-#navContent{
-  padding: 1.5rem 2rem 1rem;
-}
+#navContent{ padding: 1.5rem 2rem 1rem; }
 
 @media (max-width: 550px) {
-  #navContent{
-    justify-content: space-between;
-  }
+  #navContent{ justify-content: space-between; }
 }
 
+/* Logo (Mobile + Desktop) */
 #logo a img {
   margin-right: 5rem;
   width: 10rem;
 }
 
 @media (max-width: 550px) {
-  #logo a img {
-    width: 3.8rem;
-  }
+  #logo a img { width: 3.8rem; }
 }
 
+/* Navigation Bar Options (Desktop) */
 #menuOptions a {
   position: relative;
   text-decoration: none;  
@@ -119,16 +113,13 @@ body {
   left: 0; 
 }
 
-#dropdownMenu, #dropdownMenu img {
-  height: 4.5rem;
-}
+/* Navigation Menu Options (Mobile) */
+#dropdownMenu, #dropdownMenu img { height: 4.5rem; }
 
-#closeDropdown { /* Use JavaScript to display this */
-  display: none; 
-}
+#closeDropdown { display: none; } /* Displayed using JS */
 
-#dropdownContent { /* Use JavaScript to display this */
-  display: none;
+#dropdownContent { 
+  display: none; /* Displayed using JS */
   position: absolute;
   top: 7rem;
   right: 0;
@@ -148,10 +139,6 @@ body {
   border: 1px solid #195d9f;
 }
 
-#dropdownContent a:active {
-  text-decoration: underline;
-}
-
 /* JavaScript classes for Navigation Menu(Mobile) */
 .show {display: block !important;} 
 .hide {display: none !important;}
@@ -164,25 +151,25 @@ body {
 #landing {
   overflow: hidden;
   height: calc(100vh - 5.2rem);
+  min-height: 80rem;
 }
 
 #landingContent {  
   justify-content: space-between;
   text-align: center;
-  padding: 8rem 2rem;
+  padding: 0 10rem;
 }
 
-@media (max-width: 1140px) {
-  #landingContent {
-    padding: 4rem 2rem;
-    flex-direction: column;
+@media (max-width: 1160px) {
+  #landingContent { 
+    padding: 6rem 4rem;
+    flex-direction: column; 
   }
 }
 
 @media (max-width: 550px) {
   #landingContent {
-    padding: 2rem 2rem;
-    flex-direction: column;
+    padding: 2rem;
   }
 }
 
@@ -190,15 +177,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10rem;
+}
+
+@media (max-width: 1200px) {
+  #landingCopy {padding-bottom: 3rem;}
 }
 
 #landingCopy h1 {
   margin: 0;
   padding: 0 0 2rem 0;
-  font-family: CallunaBold;
+  font-family: SonnyGothicReg;
   font-size: 6rem;
   color: #195d9f;
-  line-height: 1.3;
+  line-height: 1.1;
 }
 
 @media (max-width: 550px) {
@@ -209,17 +201,19 @@ body {
 
 @media (max-width: 400px) {
   #landingCopy h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 
 #landingCopy p {
   margin: 0;
+  padding: 0 0 3rem;
   font-size: 2.2rem;
 }
 
 @media (max-width: 550px) {
   #landingCopy p {
+    padding-bottom: 2rem;
     font-size: 2rem;
   }
 }
@@ -230,12 +224,47 @@ body {
   }
 }
 
-#betaButton {
+form {
+  line-height: 6rem;
+}
+
+#firstNameInput, #lastNameInput, #emailInput{
+  border-radius: 25px;
+  border: 2px solid #195d9f;
+  padding: 2rem; 
+  width: 18rem;
+  height: 1rem;    
+}
+
+#firstNameInput{
+  margin-right: 1rem;
+}
+
+#emailInput{
+  width: 37.4rem;
+}
+
+@media (max-width: 400px) {
+  #firstNameInput, #lastNameInput, #emailInput{
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 2px solid #195d9f;
+    padding: 2rem; 
+    width: 14rem;
+    height: 1rem;   
+  }
+  
+  #emailInput { width: 29.7rem; }
+}
+
+#subButton {
+  cursor: pointer;
   display: block;
   position: relative;
   float: left;
   width: 20rem;
-  margin: 5rem 5rem 20rem;
+  margin: 1rem 10rem 0;
+  border: 0;
   background: #e94033;
   font-size: 2rem;
   font-weight: 600;
@@ -246,10 +275,58 @@ body {
   transition: all 0.2s;
 }
 
-#betaButton:hover {
+#subButton:hover {
   background: #cb2316;
 }
 
+@media (max-width: 1160px) {
+  #subButton { margin-bottom: 3rem; }
+}
+
+@media (max-width: 400px) {
+  #subButton {  
+    width: 15rem;
+    line-height: 5rem;
+    font-size: 1.6rem;
+  }
+}
+
+.marvel-device {
+  transform: scale(.7);
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 1160px) {
+  .marvel-device {
+    bottom: 12rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .marvel-device {
+    transform: scale(.5);
+    bottom: 25rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .marvel-device {
+    transform: scale(.4);
+    bottom: 30rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .marvel-device {
+    transform: scale(.4);
+    bottom: 28rem;
+  }
+}
+
+#mockupImage {
+  height: 81.2rem;
+  width: 37.5rem;
+}
 
 /* ------------------------------------------------------- */
 /* 4. Footer */
