@@ -257,6 +257,10 @@ form {
   #emailInput { width: 29.7rem; }
 }
 
+input:focus{
+    outline: none;
+}
+
 #subButton {
   cursor: pointer;
   display: block;
