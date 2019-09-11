@@ -33,24 +33,9 @@ body {
 }
 
 /* Fonts */
-@font-face {`
-  font-family: CallunaBold;
-  src: url(../typography/calluna-bold.otf)
-}
-
-@font-face {
-  font-family: SonnyGothicBold;
-  src: url(../typography/w-foundry-sonny-gothic-regular.otf)
-}
-
 @font-face {
   font-family: SonnyGothicReg;
   src: url(../typography/w-foundry-sonny-gothic-book.otf)
-}
-
-@font-face {
-  font-family: SonnyGothicLight;
-  src: url(../typography/w-foundry-sonny-gothic-light.otf)
 }
 
 /* Flex Styles */
