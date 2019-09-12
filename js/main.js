@@ -12,19 +12,33 @@ window.addEventListener("click", function(event) {
 });
 
 /* Slideshow Script */
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 0;
+var slideClicked = 0;
+
 
 // Next/previous controls
 function plusSlides(n) {
+  slideClicked = 1;
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
+  slideClicked = 1;
   showSlides(slideIndex = n);
 }
 
+// Automatic image rotation until slides clicked
+autoSlides();
+function autoSlides() {
+  if (slideClicked == 1) { return; }
+  else {
+    showSlides(slideIndex += 1);
+    setTimeout(autoSlides, 4000);
+  }
+}
+   
+showSlides(slideIndex);
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -40,3 +54,5 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+
