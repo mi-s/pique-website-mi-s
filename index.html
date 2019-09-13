@@ -18,10 +18,13 @@
   <link rel="stylesheet" href="css/devices.min.css" type="text/css">  
   <link rel="stylesheet" href="css/main.css">
   
+  <link href="https://fonts.googleapis.com/css?family=Neuton:300&display=swap" rel="stylesheet">
+  
   <link rel="icon" type="image/png" href="images/pique-favicon.png">
 </head>
   
 <body>
+<!-- Navigation Bar commented out until needed
   <nav class="flexContainer">
     <div id="navContent" class="flexContent">
       <div id="logo">
@@ -46,23 +49,27 @@
       </div>
     </div>
   </nav>
+-->
   
   <main>
     <div id="landing" class="flexContainer">
       <div id="landingContent" class="flexContent">
+        <img src="images/pique-logo.png" id="landingLogo" class="loadable">
         <div id="landingCopy">
-          <h1>Three Minute<br>Adventures</h1>
-          <p>Change the way you see yourself<br>and the world</p>
-          <form action="https://gmail.us20.list-manage.com/subscribe/post?u=fbeb68064347cf707cf181cb7&amp;id=822e79dadf" method="post" target="_blank">
-            <input type="fname" name="FNAME" placeholder="First Name" id="firstNameInput" required>
-            <input type="lname" name="LNAME" placeholder="Last Name" id="lastNameInput" required>
-            <br>
-            <input type="email" name="EMAIL" placeholder="Email Address" id="emailInput" required>
-            <br>
-            <input type="submit" value="Subscribe" id="subButton">
-          </form>
+          <h1 class="loadable">Three Minute Adventures<br>that change the way you see the world.</h1>
+          <div class="loadable">
+            <p id="formCopy">Join our mailing list to learn more</p>
+            <form action="https://gmail.us20.list-manage.com/subscribe/post?  u=fbeb68064347cf707cf181cb7&amp;id=822e79dadf" method="post" target="_blank">
+              <input type="fname" name="FNAME" placeholder="First Name" id="firstNameInput" required>
+              <input type="lname" name="LNAME" placeholder="Last Name" id="lastNameInput" required>
+              <br>
+              <input type="email" name="EMAIL" placeholder="Email Address" id="emailInput" required>
+              <br>
+              <input type="submit" value="Subscribe" id="subButton">
+            </form>
+          </div>
         </div>
-        <div class="marvel-device iphone-x"> <!-- 427x864 2.0234 Aspect Ratio -->
+        <div class="marvel-device iphone-x loadablePhone"> <!-- 427x864 2.0234 Aspect Ratio -->
           <div class="notch">
             <div class="camera"></div>
             <div class="speaker"></div>
@@ -91,7 +98,7 @@
           </div>
           <br>
           <br>
-          <div>
+          <div id="carouselControls">
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>

@@ -25,9 +25,15 @@ body {
   line-height: 1.6;
   background: #eee6d7 url("../images/pique-masthead-wavy-small.png") repeat 0 0;
   -webkit-animation: slide 60s linear infinite;
+  min-height: 85rem;
 }
 
 @-webkit-keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 0 812px; }
+}
+
+@keyframes slide {
   from { background-position: 0 0; }
   to { background-position: 0 812px; }
 }
@@ -46,15 +52,82 @@ body {
 
 .flexContent {
   display: flex;
+  align-items: center;
   flex: 1 0 100vw;
   max-width: 120rem;
-  align-items: center;
 }
 
 .flexContent > * { flex-shrink: 0; }
 
+/* Fade-in animation upon loading website */
+
+.loadable, .loadablePhone {
+  visibility: hidden;
+}
+
+.loadIn {
+  visibility: visible;
+  -webkit-animation-name: loadIn;
+  -webkit-animation-duration: .8s;
+  animation-name: loadIn;
+  animation-duration: .8s;
+}
+
+@-webkit-keyframes loadIn {
+  from {
+    opacity: 0;
+    transform: translatey(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+@keyframes loadIn {
+  from {
+    opacity: 0;
+    transform: translatey(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+.loadInPhone {
+  visibility: visible;
+  -webkit-animation-name: loadInPhone;
+  -webkit-animation-duration: .8s;
+  animation-name: loadInPhone;
+  animation-duration: .8s;
+}
+
+@-webkit-keyframes loadInPhone {
+  from {
+    opacity: 0;
+    transform: translatey(4rem) scale(.7);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0) scale(.7);
+  }
+}
+
+@keyframes loadInPhone {
+  from {
+    opacity: 0;
+    transform: translatey(4rem) scale(.7);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0) scale(.7);
+  }
+}
+
+
 /* ------------------------------------------------------- */
-/* 2. Navigation Bar */
+/* 2. Navigation Bar (Commented out currently) */
 
 #navContent{ padding: 1.5rem 2rem 1rem; }
 
@@ -135,83 +208,98 @@ body {
 
 #landing {
   overflow: hidden;
-  height: calc(100vh - 5.2rem);
+  height: 100vh;
   min-height: 80rem;
 }
 
-#landingContent {  
-  justify-content: space-between;
+#landingContent {
+  flex-direction: column; 
   text-align: center;
-  padding: 0 10rem;
+  padding: 10rem 0 10rem 0; 0 3rem 0
 }
 
 @media (max-width: 1160px) {
   #landingContent { 
-    padding: 6rem 4rem;
-    flex-direction: column; 
+    padding: 5rem 0 5rem 0;
   }
 }
 
 @media (max-width: 550px) {
   #landingContent {
-    padding: 2rem;
+    padding: 3rem 0 3rem 0;
   }
 }
 
 #landingCopy {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-bottom: 10rem;
+  flex-direction: column;
 }
 
-@media (max-width: 1200px) {
-  #landingCopy {padding-bottom: 3rem;}
+#landingLogo {
+  padding-bottom: 4rem;
+  width: 18rem;
 }
 
-#landingCopy h1 {
+#landingContent h1 {
   margin: 0;
-  padding: 0 0 2rem 0;
-  font-family: SonnyGothicReg;
-  font-size: 6rem;
+  padding-bottom: 4rem;
+  font-family: 'Neuton', serif;
+  font-size: 6.5rem;
   color: #195d9f;
   line-height: 1.1;
 }
 
+@media (max-width: 1200px) {
+  #landingContent h1 {
+    font-size: 5rem;
+  }
+}
+
 @media (max-width: 550px) {
-  #landingCopy h1 {
+  #landingContent h1 {
     font-size: 4rem;
   }
 }
 
 @media (max-width: 400px) {
-  #landingCopy h1 {
+  #landingContent h1 {
     font-size: 3.5rem;
   }
 }
 
-#landingCopy p {
+#formContent {
+  position: absolute;
+  bottom: 4rem;
+}
+
+#formCopy {
   margin: 0;
-  padding: 0 0 3rem;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  #formCopy {
+    font-size: 1.3rem;
+  } 
 }
 
 @media (max-width: 550px) {
-  #landingCopy p {
-    padding-bottom: 2rem;
-    font-size: 2rem;
-  }
+  #landingContent #formCopy {
+    font-size: 1.1rem;
+  } 
 }
 
 @media (max-width: 400px) {
-  #landingCopy p {
-    font-size: 1.7rem;
+  #landingContent #formCopy {
+    font-size: 1rem;
   }
 }
 
 form {
-  line-height: 6rem;
+  line-height: 5.5rem;
 }
+
 
 #firstNameInput, #lastNameInput, #emailInput{
   border-radius: 25px;
@@ -268,10 +356,6 @@ input:focus{
   background: #cb2316;
 }
 
-@media (max-width: 1160px) {
-  #subButton { margin-bottom: 3rem; }
-}
-
 @media (max-width: 400px) {
   #subButton {  
     width: 15rem;
@@ -282,7 +366,7 @@ input:focus{
 
 .marvel-device {
   transform: scale(.7);
-  margin-bottom: 10rem;
+  bottom: 9rem;
 }
 
 @media (max-width: 1160px) {

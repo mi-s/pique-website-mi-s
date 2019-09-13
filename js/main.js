@@ -1,4 +1,22 @@
-/* Mobile Menu Script */
+/* Load Script
+  Upon loading website, separately animates each element */
+load();
+async function load() {
+  var loadable = document.getElementsByClassName("loadable");
+  var loadablePhone = document.getElementsByClassName("loadablePhone");
+  for (i = 0; i < loadable.length; i++) {
+    loadable[i].classList.add("loadIn");
+  await sleep(400);
+  }
+  loadablePhone[0].classList.add("loadInPhone");
+}
+
+// Sleep Script (for load)
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Mobile Menu Script
 window.addEventListener("click", function(event) {
   if (event.target.matches("#openDropdown")) {
     document.getElementById("dropdownContent").classList.add("show");
@@ -11,33 +29,10 @@ window.addEventListener("click", function(event) {
   }
 });
 
-/* Slideshow Script */
+// Slideshow Script
 var slideIndex = 0;
 var slideClicked = 0;
 
-
-// Next/previous controls
-function plusSlides(n) {
-  slideClicked = 1;
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  slideClicked = 1;
-  showSlides(slideIndex = n);
-}
-
-// Automatic image rotation until slides clicked
-autoSlides();
-function autoSlides() {
-  if (slideClicked == 1) { return; }
-  else {
-    showSlides(slideIndex += 1);
-    setTimeout(autoSlides, 4000);
-  }
-}
-   
 showSlides(slideIndex);
 function showSlides(n) {
   var i;
@@ -54,5 +49,28 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+// Automatic image rotation until slides clicked
+autoSlides();
+function autoSlides() {
+  if (slideClicked == 1) { return; }
+  else {
+    showSlides(slideIndex += 1);
+    setTimeout(autoSlides, 4000);
+  }
+}
+
+// Next/previous controls
+function plusSlides(n) {
+  slideClicked = 1;
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  slideClicked = 1;
+  showSlides(slideIndex = n);
+}
+
 
 
