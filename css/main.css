@@ -209,7 +209,7 @@ body {
 #landing {
   overflow: hidden;
   height: 100vh;
-  min-height: 80rem;
+  min-height: 100rem;
 }
 
 #landingContent {
