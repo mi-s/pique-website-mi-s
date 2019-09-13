@@ -24,13 +24,8 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   background: #eee6d7 url("../images/pique-masthead-wavy-small.png") repeat 0 0;
-  -webkit-animation: slide 60s linear infinite;
-  min-height: 85rem;
-}
-
-@-webkit-keyframes slide {
-  from { background-position: 0 0; }
-  to { background-position: 0 812px; }
+  -animation: slide 45s linear infinite;
+  -webkit-animation: slide 45s linear infinite;
 }
 
 @keyframes slide {
@@ -38,7 +33,12 @@ body {
   to { background-position: 0 812px; }
 }
 
-/* Fonts */
+@-webkit-keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 0 812px; }
+}
+
+/* Font */
 @font-face {
   font-family: SonnyGothicReg;
   src: url(../typography/w-foundry-sonny-gothic-book.otf)
@@ -68,15 +68,15 @@ body {
 .loadIn {
   visibility: visible;
   -webkit-animation-name: loadIn;
-  -webkit-animation-duration: .8s;
+  -webkit-animation-duration: .6s;
   animation-name: loadIn;
-  animation-duration: .8s;
+  animation-duration: .6s;
 }
 
 @-webkit-keyframes loadIn {
   from {
     opacity: 0;
-    transform: translatey(4rem);
+    transform: translatey(5rem);
   }
   to {
     opacity: 1;
@@ -87,7 +87,7 @@ body {
 @keyframes loadIn {
   from {
     opacity: 0;
-    transform: translatey(4rem);
+    transform: translatey(5rem);
   }
   to {
     opacity: 1;
@@ -98,15 +98,15 @@ body {
 .loadInPhone {
   visibility: visible;
   -webkit-animation-name: loadInPhone;
-  -webkit-animation-duration: .8s;
+  -webkit-animation-duration: .6s;
   animation-name: loadInPhone;
-  animation-duration: .8s;
+  animation-duration: .6s;
 }
 
 @-webkit-keyframes loadInPhone {
   from {
     opacity: 0;
-    transform: translatey(4rem) scale(.7);
+    transform: translatey(5rem) scale(.7);
   }
   to {
     opacity: 1;
@@ -117,7 +117,7 @@ body {
 @keyframes loadInPhone {
   from {
     opacity: 0;
-    transform: translatey(4rem) scale(.7);
+    transform: translatey(5rem) scale(.7);
   }
   to {
     opacity: 1;
@@ -125,9 +125,58 @@ body {
   }
 }
 
+@media (max-width: 800px) {
+  @-webkit-keyframes loadInPhone {
+  from {
+    opacity: 0;
+    transform: translatey(5rem) scale(.5);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0) scale(.5);
+  }
+}
+
+@keyframes loadInPhone {
+  from {
+    opacity: 0;
+    transform: translatey(5rem) scale(.5);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0) scale(.5);
+  }
+}
+}
+
+@media (max-width: 550px) {
+  @-webkit-keyframes loadInPhone {
+  from {
+    opacity: 0;
+    transform: translatey(5rem) scale(.4);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0) scale(.4);
+  }
+}
+
+@keyframes loadInPhone {
+  from {
+    opacity: 0;
+    transform: translatey(5rem) scale(.4);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0) scale(.4);
+  }
+}
+}
+
+
 
 /* ------------------------------------------------------- */
-/* 2. Navigation Bar (Commented out currently) */
+/* 2. Navigation Bar (Commented out until needed) */
 
 #navContent{ padding: 1.5rem 2rem 1rem; }
 
@@ -209,29 +258,46 @@ body {
 #landing {
   overflow: hidden;
   height: 100vh;
-  min-height: 100rem;
+  min-height: 130rem;
+}
+
+@media (max-width: 1200px) and (min-height:1200px) {
+  #landing {
+    height: calc(100vh - 5rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  #landing {
+    min-height: 110rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #landing {
+    min-height: 90rem;
+  }
 }
 
 #landingContent {
   flex-direction: column; 
   text-align: center;
-  padding: 10rem 0 10rem 0; 0 3rem 0
+  padding: 10rem 0;
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1300px) {
   #landingContent { 
-    padding: 5rem 0 5rem 0;
+    padding: 7rem 0;
   }
 }
 
 @media (max-width: 550px) {
   #landingContent {
-    padding: 3rem 0 3rem 0;
+    padding: 3rem 0;
   }
 }
 
 #landingCopy {
-  display: flex;
   align-items: center;
   flex-direction: column;
 }
@@ -239,6 +305,20 @@ body {
 #landingLogo {
   padding-bottom: 4rem;
   width: 18rem;
+}
+
+@media (max-width: 550px) {
+  #landingLogo {
+    padding-bottom: 3rem;
+    width: 14rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #landingLogo {
+    padding-bottom: 3rem;
+    width: 12rem;
+  }
 }
 
 #landingContent h1 {
@@ -258,19 +338,14 @@ body {
 
 @media (max-width: 550px) {
   #landingContent h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
 @media (max-width: 400px) {
   #landingContent h1 {
-    font-size: 3.5rem;
+    font-size: 3.3rem;
   }
-}
-
-#formContent {
-  position: absolute;
-  bottom: 4rem;
 }
 
 #formCopy {
@@ -285,13 +360,13 @@ body {
 }
 
 @media (max-width: 550px) {
-  #landingContent #formCopy {
+  #formCopy {
     font-size: 1.1rem;
   } 
 }
 
 @media (max-width: 400px) {
-  #landingContent #formCopy {
+  #formCopy {
     font-size: 1rem;
   }
 }
@@ -299,7 +374,6 @@ body {
 form {
   line-height: 5.5rem;
 }
-
 
 #firstNameInput, #lastNameInput, #emailInput{
   border-radius: 25px;
@@ -314,7 +388,7 @@ form {
 }
 
 #emailInput{
-  width: 37.4rem;
+  width: 37.6rem;
 }
 
 @media (max-width: 400px) {
@@ -336,11 +410,8 @@ input:focus{
 
 #subButton {
   cursor: pointer;
-  display: block;
-  position: relative;
-  float: left;
   width: 20rem;
-  margin: 1rem 10rem 0;
+  margin: 1rem 10rem 5rem;
   border: 0;
   background: #e94033;
   font-size: 2rem;
@@ -365,34 +436,20 @@ input:focus{
 }
 
 .marvel-device {
+  position: relative;
   transform: scale(.7);
-  bottom: 9rem;
-}
-
-@media (max-width: 1160px) {
-  .marvel-device {
-    bottom: 12rem;
-  }
+  transform-origin: top center;
 }
 
 @media (max-width: 800px) {
   .marvel-device {
     transform: scale(.5);
-    bottom: 25rem;
   }
 }
 
 @media (max-width: 550px) {
   .marvel-device {
     transform: scale(.4);
-    bottom: 30rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .marvel-device {
-    transform: scale(.4);
-    bottom: 28rem;
   }
 }
 
@@ -403,27 +460,28 @@ input:focus{
 
 /* Next & previous buttons */
 .prev, .next {
+  position: relative;
   cursor: pointer;
-  width: auto;
-  margin-top: -22px;
+  bottom: 48rem;
   padding: 16px;
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 32px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
 
 .prev{
-  margin-right: 3rem;
+  right: 22rem;
 }
 .next {
-  margin-left: 3rem;
+  left: 22rem;
 }
 
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
+  position: relative;
+  bottom: 2rem;
   height: 15px;
   width: 15px;
   margin: 0 3px;
@@ -535,21 +593,3 @@ footer {
     display: none !important;
   }
 }
-
-
-/* Media Query Templates (Place next to relevant style) */
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}

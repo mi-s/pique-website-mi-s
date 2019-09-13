@@ -6,7 +6,7 @@ async function load() {
   var loadablePhone = document.getElementsByClassName("loadablePhone");
   for (i = 0; i < loadable.length; i++) {
     loadable[i].classList.add("loadIn");
-  await sleep(400);
+    await sleep(200);  // wait 200ms before loading next element
   }
   loadablePhone[0].classList.add("loadInPhone");
 }
