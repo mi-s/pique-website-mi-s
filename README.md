@@ -1,6 +1,6 @@
 # pique-website-mi-s
 
-[Official Website](getpique.app)
+[Official Website](https://getpique.app)
 
 This is a static landing page that I built from scratch for Pique, a mobile app startup. 
 
